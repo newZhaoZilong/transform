@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>transform</title>
+    <meta charset="utf-8" />
+    <style>
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100px);
+            }
+        }
+
+        .active {
+            animation: move 2s linear forwards;
+        }
+
+        .test-div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first" class="test-div"></div>
+    <script type="text/javascript">
+        setTimeout(() => {
+            let div1 = document.getElementById("first");
+            // div1.style.marginLeft = "50px";
+            div1.classList.add("active");
+        }, 2000);
+    </script>
+</body>
+
+</html>
